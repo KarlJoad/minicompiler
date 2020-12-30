@@ -38,7 +38,13 @@ impl std::fmt::Display for BadInput {
 impl std::error::Error for BadInput {}
 
 fn lex(input: &str) -> Result<Vec<Token>, BadInput> {
-    todo!("Implement Lexing!");
+    let mut result: Vec<Token> = Vec::new();
+
+    for char in input.chars() {
+	todo!("Implement loop for reading individual characters to recognize tokens!");
+    }
+
+    Ok(result);
 }
 
 fn main() {
