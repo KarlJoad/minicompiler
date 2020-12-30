@@ -48,6 +48,9 @@ fn lex(input: &str) -> Result<Vec<Token>, BadInput> {
 	/* Match on the various possible tokens we can be given and that we choose
 	 * to accept. */
 	match char {
+	    // Skip any whitespace
+	    ' ' => continue,
+
 	}
     }
 
