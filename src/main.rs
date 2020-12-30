@@ -69,7 +69,38 @@ fn lex(input: &str) -> Result<Vec<Token>, BadInput> {
 
 	    // Numbers
 	    '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' => {
-		todo!("Implement number parsing!")
+		/* We take the number character, convert it to an unsigned byte,
+		 * then subtract the upper half-byte 3, and convert resulting byte
+		 * back to a number. */
+		let num: i64 = (character as u8 - '0' as u8) as i64;
+
+		/* Number parsing is done with a stack-based manipulation system. */
+
+		/* If result is empty, push this number to result and continue
+		 * lexing the input. */
+		if result.len() == 0 {
+		    result.push(Number(num));
+		    continue;
+		}
+
+		/* If we receive another number, pop the last item in result and
+		 * save it as last. */
+		let last = result.pop().unwrap();
+		/* pop() -> Option<T>. Use unwrap() to get value inside Option. */
+
+		match last {
+		    /* If last is a number, multiply that number by 10 and add the
+		     * current number to it. */
+		    Number(i) => {
+			result.push(Number((i * 10) + num));
+		    }
+		    /* Otherwise push the node back into result and push the current
+		     * number to result as well. */
+		    _ => {
+			result.push(last);
+			result.push(Number(num));
+		    }
+		}
 	    }
 
 	    // Anything and everything else is malformed input.
