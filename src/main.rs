@@ -57,6 +57,12 @@ fn lex(input: &str) -> Result<Vec<Token>, BadInput> {
 		break;
 	    }
 
+	    // Math Operations
+	    '+' => result.push(Operation(Add)),
+	    '-' => result.push(Operation(Sub)),
+	    '*' => result.push(Operation(Mul)),
+	    '/' => result.push(Operation(Div)),
+
 	}
     }
 
