@@ -77,7 +77,7 @@ fn lex(input: &str) -> Result<Vec<Token>, BadInput> {
 	}
     }
 
-    Ok(result);
+    Ok(result)
 }
 
 fn main() {
