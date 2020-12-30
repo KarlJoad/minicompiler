@@ -63,6 +63,10 @@ fn lex(input: &str) -> Result<Vec<Token>, BadInput> {
 	    '*' => result.push(Operation(Mul)),
 	    '/' => result.push(Operation(Div)),
 
+	    // Parentheses
+	    '(' => result.push(LeftParen),
+	    ')' => result.push(RightParen),
+
 	}
     }
 
