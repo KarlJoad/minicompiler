@@ -125,4 +125,10 @@ mod lex_tests {
 	assert!(lex("tacos are tasty").is_err());
     }
 
+    #[test]
+    fn lex_single_op() {
+	assert_eq!(lex("420 + 69"),
+		   Ok(vec![Number(420), Operation(Add), Number(69)]));
+    }
+
 }
