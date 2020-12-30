@@ -72,6 +72,8 @@ fn lex(input: &str) -> Result<Vec<Token>, BadInput> {
 		todo!("Implement number parsing!")
 	    }
 
+	    // Anything and everything else is malformed input.
+	    _ => return Err(BadInput),
 	}
     }
 
