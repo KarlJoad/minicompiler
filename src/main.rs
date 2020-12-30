@@ -19,6 +19,10 @@ enum Token {
     RightParen
 }
 
+fn lex(input: &str) -> Vec<Token> {
+    todo!("Implement Lexing!");
+}
+
 fn main() {
     println!("Hello, world!");
 }
