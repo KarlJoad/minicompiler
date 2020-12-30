@@ -20,6 +20,10 @@ enum Token {
 }
 
 fn lex(input: &str) -> Vec<Token> {
+/* struct representing malformed user input. */
+#[derive(Debug, Eq, PartialEq)]
+struct BadInput;
+
     todo!("Implement Lexing!");
 }
 
