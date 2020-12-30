@@ -114,3 +114,9 @@ fn lex(input: &str) -> Result<Vec<Token>, BadInput> {
 fn main() {
     println!("Hello, world!");
 }
+
+#[cfg(test)]
+mod lex_tests {
+    use super::{Op::*, Token::*, *};
+
+}
