@@ -131,4 +131,17 @@ mod lex_tests {
 		   Ok(vec![Number(420), Operation(Add), Number(69)]));
     }
 
+    #[test]
+    fn lex_multiple_ops() {
+	assert_eq!(lex("(30 + 560) / 4"),
+		   Ok(vec![
+		       LeftParen,
+		       Number(30),
+		       Operation(Add),
+		       Number(560),
+		       RightParen,
+		       Operation(Div),
+		       Number(4)
+		   ]));
+    }
 }
