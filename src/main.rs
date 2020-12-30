@@ -51,6 +51,12 @@ fn lex(input: &str) -> Result<Vec<Token>, BadInput> {
 	    // Skip any whitespace
 	    ' ' => continue,
 
+	    // Terminating characters for input. Stop lexing here.
+	    ';' | '\n' => {
+		result.push(EOF);
+		break;
+	    }
+
 	}
     }
 
