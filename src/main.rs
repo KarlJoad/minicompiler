@@ -45,6 +45,10 @@ fn lex(input: &str) -> Result<Vec<Token>, BadInput> {
 	use Op::*;
 	use Token::*;
 
+	/* Match on the various possible tokens we can be given and that we choose
+	 * to accept. */
+	match char {
+	}
     }
 
     Ok(result);
