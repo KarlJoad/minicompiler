@@ -119,4 +119,10 @@ fn main() {
 mod lex_tests {
     use super::{Op::*, Token::*, *};
 
+    #[test]
+    fn basic_lexing() {
+	assert!(lex("420 + 69").is_ok());
+	assert!(lex("tacos are tasty").is_err());
+    }
+
 }
