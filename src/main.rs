@@ -9,6 +9,16 @@ enum Op {
     Div
 }
 
+/* Tokens that we choose to accept. */
+#[derive(Debug, Eq, PartialEq)]
+enum Token {
+    EOF,
+    Number(i64),
+    Operation(Op),
+    LeftParen,
+    RightParen
+}
+
 fn main() {
     println!("Hello, world!");
 }
