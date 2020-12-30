@@ -40,14 +40,14 @@ impl std::error::Error for BadInput {}
 fn lex(input: &str) -> Result<Vec<Token>, BadInput> {
     let mut result: Vec<Token> = Vec::new();
 
-    for char in input.chars() {
+    for character in input.chars() {
 	/* Bring the Op and Token enum variants into this scope's namespace. */
 	use Op::*;
 	use Token::*;
 
 	/* Match on the various possible tokens we can be given and that we choose
 	 * to accept. */
-	match char {
+	match character {
 	    // Skip any whitespace
 	    ' ' => continue,
 
