@@ -35,6 +35,9 @@ impl std::fmt::Display for BadInput {
     }
 }
 
+/* Bad input can use the default stdlib implementation. */
+impl std::error::Error for BadInput {}
+
     todo!("Implement Lexing!");
 }
 
