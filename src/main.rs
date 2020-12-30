@@ -19,7 +19,6 @@ enum Token {
     RightParen
 }
 
-fn lex(input: &str) -> Vec<Token> {
 /* struct representing malformed user input. */
 #[derive(Debug, Eq, PartialEq)]
 struct BadInput;
@@ -38,6 +37,7 @@ impl std::fmt::Display for BadInput {
 /* Bad input can use the default stdlib implementation. */
 impl std::error::Error for BadInput {}
 
+fn lex(input: &str) -> Result<Vec<Token>, BadInput> {
     todo!("Implement Lexing!");
 }
 
