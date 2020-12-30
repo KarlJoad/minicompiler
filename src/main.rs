@@ -24,6 +24,17 @@ fn lex(input: &str) -> Vec<Token> {
 #[derive(Debug, Eq, PartialEq)]
 struct BadInput;
 
+/* If we receive BadInput, then we need a way to display the output as an error
+ * message using std::fmt::Display. */
+impl std::fmt::Display for BadInput {
+    /* fmt takes a reference to BadInput and a mutable reference to the formatter
+     * and write!s the string to the formatter. */
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+	/* No semicolon needed, because it's a one-line function (an expression). */
+	write!(f, "Invalid input. Check again.")
+    }
+}
+
     todo!("Implement Lexing!");
 }
 
